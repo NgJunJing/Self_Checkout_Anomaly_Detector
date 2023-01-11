@@ -1,0 +1,6 @@
+pycaret==2.3.10
+streamlit==1.16.0
+streamlit_option_menu==0.3.2
+pandas==1.4.4
+pandas_profiling==3.6.2
+streamlit_pandas_profiling==0.1.3
