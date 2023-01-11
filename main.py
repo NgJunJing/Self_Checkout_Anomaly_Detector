@@ -73,11 +73,7 @@ if selected == 'Documentation':
 
     st.header("Documentation")
     st.write('---')
-    st.header('**User Manual**')
-    st.markdown('This is the user manual for using the two anomaly detector function in this app')
-    DisplayPDF('User_Manual.pdf')
 
-    st.write('---')
     st.header('**Dataset**')
     data = pd.read_csv("train.csv")
     st.markdown('''
@@ -109,12 +105,93 @@ if selected == 'Documentation':
     st.write(data)
 
     st.write('---')
+    
     st.header('**Exploratory Data Analysis of Dataset Used**')
     # Add some description here
-    if st.button('View EDA Report'):
+    if st.button('Generate EDA Report'):
         EDAdataset = ProfileReport(data, explorative=True)
         st_profile_report(EDAdataset)
+
     st.write('---')
+    
+    st.header('**User Manual**')
+    st.markdown('This is the user manual for using the two anomaly detector function in this app')
+    st.markdown('''
+    #### Online Anomaly Detector
+
+    1. Select “Online Anomaly Detector” in the “Main Menu”.
+
+    ''')
+    um1 = Image.open('UM1.png')
+    st.image(um1)
+    st.markdown('''
+
+    2. Then, you will land on this page.
+
+    ''')
+    um2 = Image.open('UM2.png')
+    st.image(um2)
+    st.markdown('''
+
+    3. Now, input every field here on the page.
+
+    ''')
+    um3 = Image.open('UM3.png')
+    st.image(um3)
+    st.markdown('''
+
+    4. Click on “Check” button at the bottom.
+
+    ''')
+    um4 = Image.open('UM4.png')
+    st.image(um4)
+    st.markdown('''
+
+    5. View result generated.
+
+    ''')
+    um5 = Image.open('UM5.png')
+    st.image(um5)
+    st.write('---')
+    st.markdown('''
+    #### Batch Anomaly Detector
+
+    1. Select "Batch" Anomaly Detector” in the “Main Menu”.
+
+    ''')
+    um6 = Image.open('UM6.png')
+    st.image(um6)
+    st.markdown('''
+
+    2. Then, you will land on this page.
+
+    ''')
+    um7 = Image.open('UM7.png')
+    st.image(um7)
+    st.markdown('''
+
+    3. Upload a csv containing the variables stated.
+
+    ''')
+    um8 = Image.open('UM8.png')
+    st.image(um8)
+    st.markdown('''
+
+    4. The result DataFrame with the labelled data will be displayed below and can be downloaded after clicking the “Download Labelled Data” button.
+
+    ''')
+    um9 = Image.open('UM9.png')
+    st.image(um9)
+    st.markdown('''
+
+    5. The Exploratory Data Analysis report for the Labelled DataFrame is generated below it.
+
+    ''')
+    um10 = Image.open('UM10.png')
+    st.image(um10)
+
+    st.write('---')
+    
 
 #First Function: Online User Input
 if selected == 'Online Anomaly Detector':
@@ -210,5 +287,6 @@ if selected == 'Batch Anomaly Detector':
         st.info('Awaiting for CSV file to be uploaded')
 
         
+
 
 
