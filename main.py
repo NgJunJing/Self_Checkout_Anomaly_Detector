@@ -211,8 +211,11 @@ if selected == 'Online Anomaly Detector':
     #'_This_ is some **Markdown***'
     '**The Total Number of Items Scanned (1-50 Items)**'
     temp_input1 = st.number_input('The Total Number of Items Scanned (1-50)', min_value=1, max_value=50, value=1, step=1, label_visibility="collapsed")
-    '**The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs)**'
-    input2 = st.number_input('The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs)', 1, 3600, value=1, step=1, label_visibility="collapsed")
+    '**The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs for more than 1 item)**'
+    if temp_input1 == 1:
+        input2 = st.number_input('The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs for more than 1 item)', 0, 0, value=0, label_visibility="collapsed")
+    else:
+        input2 = st.number_input('The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs for more than 1 item)', 1, 3600, value=0, step=1, label_visibility="collapsed")
     '**The Grand Total of Product Scanned (RM)**'
     input3 = st.number_input('The Grand Total of Product Scanned (RM)', 0.00, 1000.00, step=0.01, value=0.00, format="%0.2f", label_visibility="collapsed")
     '**The Number of Scanned but Cancelled Items**'
@@ -223,8 +226,12 @@ if selected == 'Online Anomaly Detector':
     input6 = st.number_input('The Number of Times The Customer Modified The Quantities for One of The Scanned Products', min_value=0, max_value=100, step=1, value=0, label_visibility="collapsed")
     '**Customer Trust Level (Lowest(1) to Highest(6))**'
     input1 = st.selectbox('Customer Trust Level',[1,2,3,4,5,6], label_visibility="collapsed")
-    input7 = temp_input1/input2
-    input8 = input3/input2
+    if input2 == 0:
+        input7 = 0
+        input8 = 0
+    else:
+        input7 = temp_input1/input2
+        input8 = input3/input2
     input9 = input4/(temp_input1-input4)
 
     input_listing = {'trustLevel': input1, 'totalScanTimeInSeconds': input2, 'grandTotal': input3, 'lineItemVoids': input4,
