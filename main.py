@@ -212,10 +212,9 @@ if selected == 'Online Anomaly Detector':
     '**The Total Number of Items Scanned (1-50 Items)**'
     temp_input1 = st.number_input('The Total Number of Items Scanned (1-50)', min_value=1, max_value=50, value=1, step=1, label_visibility="collapsed")
     '**The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs for more than 1 item)**'
-    if temp_input1 == 1:
-        input2 = st.number_input('The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs for more than 1 item)', 0, 0, value=0, label_visibility="collapsed")
-    else:
-        input2 = st.number_input('The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs for more than 1 item)', 1, 3600, value=0, step=1, label_visibility="collapsed")
+    input2 = 0
+    if temp_input1 != 1:
+        input2 = st.number_input('The Total Time Taken in Seconds between The Fisrt and The Last Product Scanned (1-3600secs for more than 1 item)', 1, 3600, value=0, label_visibility="collapsed")
     '**The Grand Total of Product Scanned (RM)**'
     input3 = st.number_input('The Grand Total of Product Scanned (RM)', 0.00, 1000.00, step=0.01, value=0.00, format="%0.2f", label_visibility="collapsed")
     '**The Number of Scanned but Cancelled Items**'
