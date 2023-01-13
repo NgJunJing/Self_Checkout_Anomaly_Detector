@@ -8,7 +8,7 @@ from PIL import Image
 import base64
 
 # load the Classifier
-lmodel = load_model('stack1_best')
+lmodel = load_model('s2_best')
 
 def DisplayPDF(file):
     with open(file, "rb") as f:
