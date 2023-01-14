@@ -107,8 +107,9 @@ if selected == 'Documentation':
     st.write('---')
     
     st.header('**Exploratory Data Analysis of Dataset Used**')
-    # Add some description here
-    if st.button('Generate EDA Report'):
+    
+    GEDA = st.checkbox('Generate EDA Report')
+    if GEDA == True:
         EDAdataset = ProfileReport(data, explorative=True)
         st_profile_report(EDAdataset)
 
