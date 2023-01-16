@@ -217,9 +217,9 @@ if selected == 'Online Anomaly Detector':
     '**The Grand Total of Product Scanned (RM)**'
     input3 = st.number_input('The Grand Total of Product Scanned (RM)', 0.00, 1000.00, step=0.01, value=0.00, format="%0.2f", label_visibility="collapsed")
     '**The Number of Scanned but Cancelled Items**'
-    input4 = st.number_input('The Number of Scanned but Cancelled Items', min_value=0, max_value=temp_input1, step=1, value=0, label_visibility="collapsed")
+    input4 = st.number_input('The Number of Scanned but Cancelled Items', min_value=0, max_value=100, step=1, value=0, label_visibility="collapsed")
     '**The Number of Attempts to Activate The Scanner Without Actually Scanning Anything**'
-    input5 = st.number_input('The Number of Attempts to Activate The Scanner Without Actually Scanning Anything', min_value=0, max_value=50, step=1, value=0, label_visibility="collapsed")
+    input5 = st.number_input('The Number of Attempts to Activate The Scanner Without Actually Scanning Anything', min_value=0, max_value=100, step=1, value=0, label_visibility="collapsed")
     '**The Number of Times The Customer Modified The Quantities for One of The Scanned Products**'
     input6 = st.number_input('The Number of Times The Customer Modified The Quantities for One of The Scanned Products', min_value=0, max_value=100, step=1, value=0, label_visibility="collapsed")
     '**Customer Trust Level (Lowest(1) to Highest(6))**'
